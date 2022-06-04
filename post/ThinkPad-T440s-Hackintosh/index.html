@@ -1,0 +1,407 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    联想ThinkPad T440s折腾黑苹果记录 | 山仔
+</title>
+<link rel="shortcut icon" href="https://fsnhljz.github.io/favicon.ico?v=1654317280457">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fsnhljz.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://fsnhljz.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
+
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://fsnhljz.github.io">
+                <img class="avatar" src="https://fsnhljz.github.io/images/avatar.png?v=1654317280457" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    山仔
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            联想ThinkPad T440s折腾黑苹果记录
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2022-06-04</time>
+                            
+                        </div>
+                        
+                                <div class="post-content">
+                                    <p>苹果macOS系统确实挺好用的，特别可以使用迅雷破解版，下载网速飞快。本身有一台二手MacBook Ari在家用，另外一台二手ThinkPad T440s在办公室用，这两天查到有支持ThinkPad T440s的资料，特意弄了一下，本身小白一名，只能参照前人弄的而弄，希望同样使用ThinkPad T440s的可以参考一下，但有问题就别问我了，我也不懂得。</p>
+<!-- more -->
+<h2 id="使用到的资料">使用到的资料</h2>
+<p><a href="https://blog.daliansky.net/macOS-Catalina-10.15.3-19D76-Release-version-with-Clover-5103-original-image-Double-EFI-Version.html#more">【黑果小兵】macOS Catalina 10.15.3 19D76 正式版 with Clover 5103原版镜像[双EFI版]</a><br>
+<a href="https://github.com/thebinh-lg051/ThinkPad-T440s-Hackintosh">MacOS ThinkPad T440s</a><br>
+<a href="https://blog.daliansky.net/Lenovo-Xiaoxin-PRO-13-2019-and-macOS-Catalina-Installation-Tutorial.html">联想小新PRO 13 2019兼macOS Catalina安装教程</a></p>
+<h2 id="需要下载的文件">需要下载的文件</h2>
+<p><a href="https://mirrors.dtops.cc/iso/MacOS/daliansky_macos/macOS%20Catalina%2010.15.3%2819D76%29%20Installer%20for%20Clover%205103%20and%20WEPE.dmg">macOS Catalina 10.15.3(19D76) Installer for Clover 5103 and WEPE.dmg</a>（最新苹果系统镜像）<br>
+<a href="https://www.balena.io/etcher/">balenaEtcher</a>（跨平台镜像写入工具）<br>
+<a href="http://www.wepe.com.cn/">微PE工具箱</a>（PE工具，用于分区及引导用）<br>
+<a href="https://nhljz.lanzoui.com/idjGGqezz0f">Lenovo-Thinkpad-T440S-main（OC6.7）.zip</a>（EFI最重要的东西，opencore6.7。转自这位兄弟：https://github.com/Sniki/Lenovo-Thinkpad-T440S）</p>
+<hr>
+<p>首先，用wepe进入PE里面，对磁盘转换为EFI用的GUxxx分区，前部分出300M的ESP盘，用于引导EFI使用，后部分出30G以上的空间，用于macOS使用，算了，我不太懂说这个，看连接吧：<a href="https://blog.csdn.net/a792396951/article/details/80230946">安装win10+黑苹果双系统零基础教程</a><br>
+简单来说就是要用EFI引导方式，然后分三个区，一个是引导用的，一个是win用的，一个是macOS用的。</p>
+<hr>
+<p>到联想官网下载旧版BIOS 2.36固件降级，具体作用我也不清楚，应该是解除什么限制之类的吧。<br>
+然后按照如下要求设置BIOS：</p>
+<ul>
+<li>Security -&gt; Security Chip: Disabled</li>
+<li>Memory Protection -&gt; Execution Prevention: Enabled</li>
+<li>Virtualization -&gt; Intel Virtualization Technology: Disabled</li>
+<li>Internal Device Access -&gt; Bottom Cover Tamper Detection: must be Disabled</li>
+<li>Anti-Theft -&gt; Current Setting: Disabled;</li>
+<li>Anti-Theft -&gt; Computrace -&gt; Current Setting: Disabled</li>
+<li>Secure Boot -&gt; Secure Boot: Disabled</li>
+<li>UEFI/Legacy Boot: UEFI Only</li>
+<li>CSM Support: Yes</li>
+</ul>
+<hr>
+<p>进回win里面，使用刚才下载的balenaEtcher，写入下载的苹果系统镜像。<br>
+重启系统，使用制作的U盘启动，就会进入到Clover引导界面，然后安装就是了。<br>
+跟着忘了，好想是把EFI里面的Clover文件夹放进U盘里面同名文件夹覆盖吧，之后启动就是黑苹果了。<br>
+蓝牙、无线网卡不能用，耳机插口有杂音。<br>
+算了，我真写不出来，还是网上多找教程吧，只要有相同型号的机器，按照教程一步一步来就可以成功的，但有很多人又没有写清楚教程，只能自己摸索了，或者花钱请人弄吧，其实我觉得还是买个白苹果最好了，买个二手就是了。</p>
+<h4 id="耳机杂音教程">耳机杂音教程</h4>
+<ul>
+<li>复制<code>ALCPlugFix</code>文件夹到桌面，然后打开终端输入以下代码:</li>
+<li>sudo spctl --master-disable</li>
+<li>sudo mkdir /usr/local/bin/</li>
+<li>cd desktop/ALCPlugFix</li>
+<li>sudo cp -R ALC3232.plist /usr/local/bin/</li>
+<li>./install.sh</li>
+<li>右键访达，前往文件夹，输入下面路径：</li>
+<li>/usr/local/bin/</li>
+<li>拖动<code>ALC3232.plist</code>文件到终端窗口，然后回车.</li>
+<li>完成</li>
+</ul>
+<h2 id="其他有用信息">其他有用信息</h2>
+<h4 id="重建缓存命令为">重建缓存，命令为：</h4>
+<pre><code>sudo kextcache -i /
+</code></pre>
+<h4 id="取消4位密码限制">取消4位密码限制</h4>
+<pre><code>pwpolicy -clearaccountpolicies
+</code></pre>
+<h4 id="合盖防休眠">合盖防休眠</h4>
+<ul>
+<li>禁用Lid-Sleep的命令（保持系统唤醒）：</li>
+</ul>
+<pre><code>sudo pmset -b sleep 0; sudo pmset -b disablesleep 1
+</code></pre>
+<ul>
+<li>激活Lid-Sleep的命令（让系统再次正常休眠）：</li>
+</ul>
+<pre><code>sudo pmset -b sleep 5; sudo pmset -b disablesleep 0
+</code></pre>
+<h4 id="mac-关闭系统完整性保护-sipsystem-integrity-protection的方法">mac 关闭系统完整性保护 SIP（System Integrity Protection）的方法</h4>
+<ul>
+<li>重启系统，按住 Command + R 进入恢复模式。</li>
+<li>点击顶部菜单栏 实用工具 中的 终端 。</li>
+<li>输入以下命令来禁用<code>SIP</code>保护机制。</li>
+</ul>
+<pre><code>csrutil disable
+</code></pre>
+<ul>
+<li>执行后输出以下信息表示禁用成功。</li>
+</ul>
+<pre><code>Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.
+</code></pre>
+<ul>
+<li>然后再次重启系统即可。</li>
+<li>重新打开<code>SIP</code>的方法同上，只是终端中输入的命令改为以下命令。</li>
+</ul>
+<pre><code>csrutil enable
+</code></pre>
+<h4 id="删除自带abc输入法">删除自带ABC输入法</h4>
+<ul>
+<li>关闭<code>SIP</code>重启完成后，先将输入法切换为系统自带的 ABC 输入法，然后打开终端输入以下命令。</li>
+</ul>
+<pre><code>sudo open ~/Library/Preferences/com.apple.HIToolbox.plist
+</code></pre>
+<ul>
+<li>接着输入密码即可打开<code>com.apple.HIToolbox.plist</code>文件。（打开 .plist 文件需要安装有 Xcode 或者 PlistEdit Pro 也行）</li>
+<li>依次点开<code>Root - AppleEnabledInputSources</code>，会看到一列<code>item</code>，找到其中<code>KeyboardLayout Name</code>为<code>ABC</code>的那一列，将整列<code>item</code>删掉，然后保存。</li>
+</ul>
+<h4 id="mac下校验md5">Mac下校验MD5</h4>
+<ul>
+<li>然后打开终端输入以下命令<code>md5 </code>（注意这里是有空格）</li>
+<li>接着将需要校验的文件拖入终端窗口（输入文件的目录地址）</li>
+<li>回车，等待校验结果即可，文件大时间长。</li>
+</ul>
+<h4 id="键盘win健和alt健互换">键盘win健和Alt健互换</h4>
+<ul>
+<li>更新驱动VoodooPS2Controller.kext的时候，win健和Alt健，只需要设置一下就可以了。右键显示包内容打开：</li>
+</ul>
+<pre><code>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents/
+</code></pre>
+<ul>
+<li>打开<code>Info.plist</code>文件。（打开 .plist 文件需要安装有 Xcode 或者 PlistEdit Pro 也行）</li>
+<li>依次点开<code>IOKitPersonalities-&gt;ApplePS2Keyboard-&gt;Platform Profile-&gt;Default-&gt;Custom PS2 Map</code>，会看到一列<code>Swap command and option</code>，将默认的<code>NO</code>为<code>YES</code>，然后保存。</li>
+</ul>
+<h4 id="移除quarantine属性代码">移除quarantine属性代码</h4>
+<ul>
+<li>然后打开终端输入以下命令（注意这里是有空格）</li>
+</ul>
+<pre><code>sudo xattr -r -d com.apple.quarantine 
+</code></pre>
+<ul>
+<li>接着将dmg文件拖入终端窗口（输入文件的目录地址）</li>
+<li>回车。</li>
+</ul>
+<h4 id="mac删除微软自动更新">Mac删除微软自动更新</h4>
+<ul>
+<li>/Library/Application Support/Microsoft/</li>
+<li>找到名为“MAU”或“MAU2.0”的文件夹，然后打开该目录</li>
+<li>找到并将“Microsoft AutoUpdate.app”拖到废纸篓</li>
+<li>直接成个文件夹删除也可以</li>
+</ul>
+<h4 id="如何让-finder-显示隐藏文件和文件夹">如何让 Finder 显示隐藏文件和文件夹</h4>
+<p>显示隐藏文件夹</p>
+<pre><code>defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+</code></pre>
+<p>关闭显示隐藏文件夹</p>
+<pre><code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+</code></pre>
+<h2 id="opencore修改记录">opencore修改记录</h2>
+<p>ACPI -&gt; Quirks -&gt; Resetlogstatus（无法在有BGRT表的系统上显示OEM Windows标志的硬件需要开启）取消勾选<br>
+Booter -&gt; Quirks -&gt; DevirtualiseMmio<br>
+Booter -&gt; Quirks -&gt; ProtectUefiServices（DevirtualiseMmio选择yes, ProtectUefiServices选择yes, 并删除 2.6.1 中 boot-args 里面的slide=1,以及删除 Drivers 文件夹下的 Memoryallocations.efi。即开启 KASLR 内存注入方式）原版两处不勾选，我勾选了<br>
+Kernel -&gt; Quirks -&gt; PanicNoKextDump（显示kext出信息） 取消了勾选。<br>
+Kernel -&gt; Quirks -&gt; DisableIoMapper（禁止vt-d，如果BIOS里面禁止了就不勾）取消了勾选，经测试，BIOS开启了也没问题<br>
+Misc -&gt; Boot -&gt; ShowPicker（开机显示引导菜单，单系统稳定使用的情况下可以不勾选）取消了勾选</p>
+<blockquote>
+<p><a href="https://www.wodecun.com/blog/8119.html">opencore 详解《转载》</a></p>
+</blockquote>
+<h2 id="用-mac-拯救你未正确插拔的机械硬盘">用 Mac 拯救你未正确插拔的机械硬盘</h2>
+<p>4.输入：「ps aux | grep fsck」回车<br>
+5.输入：「sudo pkill -f fsck」回车<br>
+6.输入密码（密码输入时不可见，输完按回车）<br>
+7.这时候你会欣喜的发现硬盘读出来了，但不要开心的太早，这时候你的硬盘是「只读」的。（如果你第一步没有Windows的电脑，在这一步将重要数据导出来也是OK的）<br>
+8.再次打开磁盘工具，发现分区是可被选择的状态了，点击上方的急救，开始运行（桌面上的图标会消失）<br>
+9.等急救运行成功（如果未成功就再运行一次试试，或者拔掉从步骤3再开始，但我没有遇到过失败），图标则会重新出现在桌面上，且「写入正常」了。<br>
+我没有给大家推荐网上比较常见的「使用挂载命令：sudo diskutil mount /dev/disk2」（https://blog.csdn.net/WinstonLau/article/details/86250047）是因为，一开始我用这个命令的确成功过，但此方法缺点在于「不是每次都能行」，且你不知道为什么没成功（有时候重启电脑，或者隔天再试，就成功了）令我捉摸不透。</p>
+<p>这个「杀掉所有fsck的进程」的方法也「不是我首创的」，「我并不清楚背后的计算机代码运行的逻辑，也不知道会对硬盘带来什么样的损伤」，本着「取自互联网造福互联网的原则」希望能帮到更多的人。</p>
+<blockquote>
+<p><a href="https://sspai.com/post/59017">用 Mac 拯救你未正确插拔的机械硬盘</a></p>
+</blockquote>
+
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://fsnhljz.github.io/post/WeChatTweak/">
+                                <h3 class="post-title">
+                                    Mac微信客户端WeChatTweak防撤回安装教程
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E8%B5%84%E6%96%99">使用到的资料</a></li>
+<li><a href="#%E9%9C%80%E8%A6%81%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6">需要下载的文件</a><br>
+*
+<ul>
+<li><a href="#%E8%80%B3%E6%9C%BA%E6%9D%82%E9%9F%B3%E6%95%99%E7%A8%8B">耳机杂音教程</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%9C%89%E7%94%A8%E4%BF%A1%E6%81%AF">其他有用信息</a><br>
+*
+<ul>
+<li><a href="#%E9%87%8D%E5%BB%BA%E7%BC%93%E5%AD%98%E5%91%BD%E4%BB%A4%E4%B8%BA">重建缓存，命令为：</a></li>
+<li><a href="#%E5%8F%96%E6%B6%884%E4%BD%8D%E5%AF%86%E7%A0%81%E9%99%90%E5%88%B6">取消4位密码限制</a></li>
+<li><a href="#%E5%90%88%E7%9B%96%E9%98%B2%E4%BC%91%E7%9C%A0">合盖防休眠</a></li>
+<li><a href="#mac-%E5%85%B3%E9%97%AD%E7%B3%BB%E7%BB%9F%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BF%9D%E6%8A%A4-sipsystem-integrity-protection%E7%9A%84%E6%96%B9%E6%B3%95">mac 关闭系统完整性保护 SIP（System Integrity Protection）的方法</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E8%87%AA%E5%B8%A6abc%E8%BE%93%E5%85%A5%E6%B3%95">删除自带ABC输入法</a></li>
+<li><a href="#mac%E4%B8%8B%E6%A0%A1%E9%AA%8Cmd5">Mac下校验MD5</a></li>
+<li><a href="#%E9%94%AE%E7%9B%98win%E5%81%A5%E5%92%8Calt%E5%81%A5%E4%BA%92%E6%8D%A2">键盘win健和Alt健互换</a></li>
+<li><a href="#%E7%A7%BB%E9%99%A4quarantine%E5%B1%9E%E6%80%A7%E4%BB%A3%E7%A0%81">移除quarantine属性代码</a></li>
+<li><a href="#mac%E5%88%A0%E9%99%A4%E5%BE%AE%E8%BD%AF%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0">Mac删除微软自动更新</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%AE%A9-finder-%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9">如何让 Finder 显示隐藏文件和文件夹</a></li>
+</ul>
+</li>
+<li><a href="#opencore%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95">opencore修改记录</a></li>
+<li><a href="#%E7%94%A8-mac-%E6%8B%AF%E6%95%91%E4%BD%A0%E6%9C%AA%E6%AD%A3%E7%A1%AE%E6%8F%92%E6%8B%94%E7%9A%84%E6%9C%BA%E6%A2%B0%E7%A1%AC%E7%9B%98">用 Mac 拯救你未正确插拔的机械硬盘</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+                            
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fsnhljz.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: '10acec85528899a37cdf',
+            clientSecret: '92c8c995b622be9aea3732b2e16e793260145638',
+            repo: 'fsnhljz.github.io',
+            owner: 'fsnhljz',
+            admin: ['fsnhljz'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
+
+                    
+                                
+</body>
+
+</html>

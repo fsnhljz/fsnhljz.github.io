@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fsnhljz.github.io</id>
+    <title>山仔</title>
+    <updated>2022-06-04T04:34:44.959Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fsnhljz.github.io"/>
+    <link rel="self" href="https://fsnhljz.github.io/atom.xml"/>
+    <subtitle>Aspire to live in freedom</subtitle>
+    <logo>https://fsnhljz.github.io/images/avatar.png</logo>
+    <icon>https://fsnhljz.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, 山仔</rights>
+    <entry>
+        <title type="html"><![CDATA[联想ThinkPad T440s折腾黑苹果记录]]></title>
+        <id>https://fsnhljz.github.io/post/ThinkPad-T440s-Hackintosh/</id>
+        <link href="https://fsnhljz.github.io/post/ThinkPad-T440s-Hackintosh/">
+        </link>
+        <updated>2022-06-04T04:30:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>苹果macOS系统确实挺好用的，特别可以使用迅雷破解版，下载网速飞快。本身有一台二手MacBook Ari在家用，另外一台二手ThinkPad T440s在办公室用，这两天查到有支持ThinkPad T440s的资料，特意弄了一下，本身小白一名，只能参照前人弄的而弄，希望同样使用ThinkPad T440s的可以参考一下，但有问题就别问我了，我也不懂得。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>苹果macOS系统确实挺好用的，特别可以使用迅雷破解版，下载网速飞快。本身有一台二手MacBook Ari在家用，另外一台二手ThinkPad T440s在办公室用，这两天查到有支持ThinkPad T440s的资料，特意弄了一下，本身小白一名，只能参照前人弄的而弄，希望同样使用ThinkPad T440s的可以参考一下，但有问题就别问我了，我也不懂得。</p>
+<!-- more -->
+<h2 id="使用到的资料">使用到的资料</h2>
+<p><a href="https://blog.daliansky.net/macOS-Catalina-10.15.3-19D76-Release-version-with-Clover-5103-original-image-Double-EFI-Version.html#more">【黑果小兵】macOS Catalina 10.15.3 19D76 正式版 with Clover 5103原版镜像[双EFI版]</a><br>
+<a href="https://github.com/thebinh-lg051/ThinkPad-T440s-Hackintosh">MacOS ThinkPad T440s</a><br>
+<a href="https://blog.daliansky.net/Lenovo-Xiaoxin-PRO-13-2019-and-macOS-Catalina-Installation-Tutorial.html">联想小新PRO 13 2019兼macOS Catalina安装教程</a></p>
+<h2 id="需要下载的文件">需要下载的文件</h2>
+<p><a href="https://mirrors.dtops.cc/iso/MacOS/daliansky_macos/macOS%20Catalina%2010.15.3%2819D76%29%20Installer%20for%20Clover%205103%20and%20WEPE.dmg">macOS Catalina 10.15.3(19D76) Installer for Clover 5103 and WEPE.dmg</a>（最新苹果系统镜像）<br>
+<a href="https://www.balena.io/etcher/">balenaEtcher</a>（跨平台镜像写入工具）<br>
+<a href="http://www.wepe.com.cn/">微PE工具箱</a>（PE工具，用于分区及引导用）<br>
+<a href="https://nhljz.lanzoui.com/idjGGqezz0f">Lenovo-Thinkpad-T440S-main（OC6.7）.zip</a>（EFI最重要的东西，opencore6.7。转自这位兄弟：https://github.com/Sniki/Lenovo-Thinkpad-T440S）</p>
+<hr>
+<p>首先，用wepe进入PE里面，对磁盘转换为EFI用的GUxxx分区，前部分出300M的ESP盘，用于引导EFI使用，后部分出30G以上的空间，用于macOS使用，算了，我不太懂说这个，看连接吧：<a href="https://blog.csdn.net/a792396951/article/details/80230946">安装win10+黑苹果双系统零基础教程</a><br>
+简单来说就是要用EFI引导方式，然后分三个区，一个是引导用的，一个是win用的，一个是macOS用的。</p>
+<hr>
+<p>到联想官网下载旧版BIOS 2.36固件降级，具体作用我也不清楚，应该是解除什么限制之类的吧。<br>
+然后按照如下要求设置BIOS：</p>
+<ul>
+<li>Security -&gt; Security Chip: Disabled</li>
+<li>Memory Protection -&gt; Execution Prevention: Enabled</li>
+<li>Virtualization -&gt; Intel Virtualization Technology: Disabled</li>
+<li>Internal Device Access -&gt; Bottom Cover Tamper Detection: must be Disabled</li>
+<li>Anti-Theft -&gt; Current Setting: Disabled;</li>
+<li>Anti-Theft -&gt; Computrace -&gt; Current Setting: Disabled</li>
+<li>Secure Boot -&gt; Secure Boot: Disabled</li>
+<li>UEFI/Legacy Boot: UEFI Only</li>
+<li>CSM Support: Yes</li>
+</ul>
+<hr>
+<p>进回win里面，使用刚才下载的balenaEtcher，写入下载的苹果系统镜像。<br>
+重启系统，使用制作的U盘启动，就会进入到Clover引导界面，然后安装就是了。<br>
+跟着忘了，好想是把EFI里面的Clover文件夹放进U盘里面同名文件夹覆盖吧，之后启动就是黑苹果了。<br>
+蓝牙、无线网卡不能用，耳机插口有杂音。<br>
+算了，我真写不出来，还是网上多找教程吧，只要有相同型号的机器，按照教程一步一步来就可以成功的，但有很多人又没有写清楚教程，只能自己摸索了，或者花钱请人弄吧，其实我觉得还是买个白苹果最好了，买个二手就是了。</p>
+<h4 id="耳机杂音教程">耳机杂音教程</h4>
+<ul>
+<li>复制<code>ALCPlugFix</code>文件夹到桌面，然后打开终端输入以下代码:</li>
+<li>sudo spctl --master-disable</li>
+<li>sudo mkdir /usr/local/bin/</li>
+<li>cd desktop/ALCPlugFix</li>
+<li>sudo cp -R ALC3232.plist /usr/local/bin/</li>
+<li>./install.sh</li>
+<li>右键访达，前往文件夹，输入下面路径：</li>
+<li>/usr/local/bin/</li>
+<li>拖动<code>ALC3232.plist</code>文件到终端窗口，然后回车.</li>
+<li>完成</li>
+</ul>
+<h2 id="其他有用信息">其他有用信息</h2>
+<h4 id="重建缓存命令为">重建缓存，命令为：</h4>
+<pre><code>sudo kextcache -i /
+</code></pre>
+<h4 id="取消4位密码限制">取消4位密码限制</h4>
+<pre><code>pwpolicy -clearaccountpolicies
+</code></pre>
+<h4 id="合盖防休眠">合盖防休眠</h4>
+<ul>
+<li>禁用Lid-Sleep的命令（保持系统唤醒）：</li>
+</ul>
+<pre><code>sudo pmset -b sleep 0; sudo pmset -b disablesleep 1
+</code></pre>
+<ul>
+<li>激活Lid-Sleep的命令（让系统再次正常休眠）：</li>
+</ul>
+<pre><code>sudo pmset -b sleep 5; sudo pmset -b disablesleep 0
+</code></pre>
+<h4 id="mac-关闭系统完整性保护-sipsystem-integrity-protection的方法">mac 关闭系统完整性保护 SIP（System Integrity Protection）的方法</h4>
+<ul>
+<li>重启系统，按住 Command + R 进入恢复模式。</li>
+<li>点击顶部菜单栏 实用工具 中的 终端 。</li>
+<li>输入以下命令来禁用<code>SIP</code>保护机制。</li>
+</ul>
+<pre><code>csrutil disable
+</code></pre>
+<ul>
+<li>执行后输出以下信息表示禁用成功。</li>
+</ul>
+<pre><code>Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.
+</code></pre>
+<ul>
+<li>然后再次重启系统即可。</li>
+<li>重新打开<code>SIP</code>的方法同上，只是终端中输入的命令改为以下命令。</li>
+</ul>
+<pre><code>csrutil enable
+</code></pre>
+<h4 id="删除自带abc输入法">删除自带ABC输入法</h4>
+<ul>
+<li>关闭<code>SIP</code>重启完成后，先将输入法切换为系统自带的 ABC 输入法，然后打开终端输入以下命令。</li>
+</ul>
+<pre><code>sudo open ~/Library/Preferences/com.apple.HIToolbox.plist
+</code></pre>
+<ul>
+<li>接着输入密码即可打开<code>com.apple.HIToolbox.plist</code>文件。（打开 .plist 文件需要安装有 Xcode 或者 PlistEdit Pro 也行）</li>
+<li>依次点开<code>Root - AppleEnabledInputSources</code>，会看到一列<code>item</code>，找到其中<code>KeyboardLayout Name</code>为<code>ABC</code>的那一列，将整列<code>item</code>删掉，然后保存。</li>
+</ul>
+<h4 id="mac下校验md5">Mac下校验MD5</h4>
+<ul>
+<li>然后打开终端输入以下命令<code>md5 </code>（注意这里是有空格）</li>
+<li>接着将需要校验的文件拖入终端窗口（输入文件的目录地址）</li>
+<li>回车，等待校验结果即可，文件大时间长。</li>
+</ul>
+<h4 id="键盘win健和alt健互换">键盘win健和Alt健互换</h4>
+<ul>
+<li>更新驱动VoodooPS2Controller.kext的时候，win健和Alt健，只需要设置一下就可以了。右键显示包内容打开：</li>
+</ul>
+<pre><code>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents/
+</code></pre>
+<ul>
+<li>打开<code>Info.plist</code>文件。（打开 .plist 文件需要安装有 Xcode 或者 PlistEdit Pro 也行）</li>
+<li>依次点开<code>IOKitPersonalities-&gt;ApplePS2Keyboard-&gt;Platform Profile-&gt;Default-&gt;Custom PS2 Map</code>，会看到一列<code>Swap command and option</code>，将默认的<code>NO</code>为<code>YES</code>，然后保存。</li>
+</ul>
+<h4 id="移除quarantine属性代码">移除quarantine属性代码</h4>
+<ul>
+<li>然后打开终端输入以下命令（注意这里是有空格）</li>
+</ul>
+<pre><code>sudo xattr -r -d com.apple.quarantine 
+</code></pre>
+<ul>
+<li>接着将dmg文件拖入终端窗口（输入文件的目录地址）</li>
+<li>回车。</li>
+</ul>
+<h4 id="mac删除微软自动更新">Mac删除微软自动更新</h4>
+<ul>
+<li>/Library/Application Support/Microsoft/</li>
+<li>找到名为“MAU”或“MAU2.0”的文件夹，然后打开该目录</li>
+<li>找到并将“Microsoft AutoUpdate.app”拖到废纸篓</li>
+<li>直接成个文件夹删除也可以</li>
+</ul>
+<h4 id="如何让-finder-显示隐藏文件和文件夹">如何让 Finder 显示隐藏文件和文件夹</h4>
+<p>显示隐藏文件夹</p>
+<pre><code>defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+</code></pre>
+<p>关闭显示隐藏文件夹</p>
+<pre><code>defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+</code></pre>
+<h2 id="opencore修改记录">opencore修改记录</h2>
+<p>ACPI -&gt; Quirks -&gt; Resetlogstatus（无法在有BGRT表的系统上显示OEM Windows标志的硬件需要开启）取消勾选<br>
+Booter -&gt; Quirks -&gt; DevirtualiseMmio<br>
+Booter -&gt; Quirks -&gt; ProtectUefiServices（DevirtualiseMmio选择yes, ProtectUefiServices选择yes, 并删除 2.6.1 中 boot-args 里面的slide=1,以及删除 Drivers 文件夹下的 Memoryallocations.efi。即开启 KASLR 内存注入方式）原版两处不勾选，我勾选了<br>
+Kernel -&gt; Quirks -&gt; PanicNoKextDump（显示kext出信息） 取消了勾选。<br>
+Kernel -&gt; Quirks -&gt; DisableIoMapper（禁止vt-d，如果BIOS里面禁止了就不勾）取消了勾选，经测试，BIOS开启了也没问题<br>
+Misc -&gt; Boot -&gt; ShowPicker（开机显示引导菜单，单系统稳定使用的情况下可以不勾选）取消了勾选</p>
+<blockquote>
+<p><a href="https://www.wodecun.com/blog/8119.html">opencore 详解《转载》</a></p>
+</blockquote>
+<h2 id="用-mac-拯救你未正确插拔的机械硬盘">用 Mac 拯救你未正确插拔的机械硬盘</h2>
+<p>4.输入：「ps aux | grep fsck」回车<br>
+5.输入：「sudo pkill -f fsck」回车<br>
+6.输入密码（密码输入时不可见，输完按回车）<br>
+7.这时候你会欣喜的发现硬盘读出来了，但不要开心的太早，这时候你的硬盘是「只读」的。（如果你第一步没有Windows的电脑，在这一步将重要数据导出来也是OK的）<br>
+8.再次打开磁盘工具，发现分区是可被选择的状态了，点击上方的急救，开始运行（桌面上的图标会消失）<br>
+9.等急救运行成功（如果未成功就再运行一次试试，或者拔掉从步骤3再开始，但我没有遇到过失败），图标则会重新出现在桌面上，且「写入正常」了。<br>
+我没有给大家推荐网上比较常见的「使用挂载命令：sudo diskutil mount /dev/disk2」（https://blog.csdn.net/WinstonLau/article/details/86250047）是因为，一开始我用这个命令的确成功过，但此方法缺点在于「不是每次都能行」，且你不知道为什么没成功（有时候重启电脑，或者隔天再试，就成功了）令我捉摸不透。</p>
+<p>这个「杀掉所有fsck的进程」的方法也「不是我首创的」，「我并不清楚背后的计算机代码运行的逻辑，也不知道会对硬盘带来什么样的损伤」，本着「取自互联网造福互联网的原则」希望能帮到更多的人。</p>
+<blockquote>
+<p><a href="https://sspai.com/post/59017">用 Mac 拯救你未正确插拔的机械硬盘</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mac微信客户端WeChatTweak防撤回安装教程]]></title>
+        <id>https://fsnhljz.github.io/post/WeChatTweak/</id>
+        <link href="https://fsnhljz.github.io/post/WeChatTweak/">
+        </link>
+        <updated>2022-06-03T13:52:54.000Z</updated>
+        <summary type="html"><![CDATA[<p><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%8A%9F%E8%83%BD">功能</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="功能">功能</h2>
+<p><strong>消息防撤回</strong><br>
+WechatTweak 可以阻止微信消息撤回，对于好友已经撤回的消息，你依然可以看到。<br>
+<strong>微信多开</strong><br>
+安装 Tweak 后，在程序坞的微信图标上单击右键，就可以登录另一个微信，支持无限多开。<br>
+<strong>免二次认证登录</strong><br>
+安装 Tweak 后，打开微信的设置，在 Tweak 的设置中，开启「免认证登录」，这样就只有在第一次登录 Mac 微信时，需要手机扫码验证登录，如果中间退出了微信，再登录时可直接登录，无需手机二次确认。<br>
+<strong>右键复制链接</strong><br>
+还支持识别二维码、导出表情、Alfred workflow、Launchbar action</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%8A%9F%E8%83%BD">功能</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B">安装教程</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="功能">功能</h2>
+<p><strong>消息防撤回</strong><br>
+WechatTweak 可以阻止微信消息撤回，对于好友已经撤回的消息，你依然可以看到。<br>
+<strong>微信多开</strong><br>
+安装 Tweak 后，在程序坞的微信图标上单击右键，就可以登录另一个微信，支持无限多开。<br>
+<strong>免二次认证登录</strong><br>
+安装 Tweak 后，打开微信的设置，在 Tweak 的设置中，开启「免认证登录」，这样就只有在第一次登录 Mac 微信时，需要手机扫码验证登录，如果中间退出了微信，再登录时可直接登录，无需手机二次确认。<br>
+<strong>右键复制链接</strong><br>
+还支持识别二维码、导出表情、Alfred workflow、Launchbar action</p>
+<!-- more -->
+<h2 id="安装教程">安装教程</h2>
+<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS/archive/refs/heads/master.zip" title="官网下载">官网下载</a><br>
+<a href="https://github.com/Sunnyyoung/WeChatTweak-CLI/releases/latest/download/wechattweak-cli" title="下载WeChatTweak-CLI">下载WeChatTweak-CLI</a></p>
+<p>双击解压下载的「WeChatTweak-macOS-master.zip」<br>
+将下载的「wechattweak-cli」放入上面解压的文件夹中<br>
+打开「终端」App （在启动台-其他文件夹中）<br>
+在「终端」App 中输入 cd ,并敲一个空格，然后把解压的文件夹拖到「终端」 App 中（此步骤是为了获取 WeChatTweak 的路径）<br>
+在终端中粘贴这段命令并回车执行</p>
+<pre><code>xattr -d com.apple.quarantine wechattweak-cli
+</code></pre>
+<p>再将下面的命令粘贴到终端，回车执行</p>
+<pre><code>chmod +x wechattweak-cli
+</code></pre>
+<p>继续下面的命令粘贴到终端，回车执行，提示输入开机密码，在 password 后面输入开机密码，输入的时候不会显示任何字符，直接输，输完敲回车（这一步的目的是执行安装）</p>
+<pre><code>sudo ./wechattweak-cli --install
+</code></pre>
+<p>然后会发现无法打开「微信」<br>
+我们需要重启 Mac ，然后登录并打开微信的设置，有 Tweak ，则大功告成。</p>
+<p>如何卸载<br>
+终端输入下面命令并回车</p>
+<pre><code>sudo ./wechattweak-cli --uninstall
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://fsnhljz.github.io/post/hello-gridea/</id>
+        <link href="https://fsnhljz.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
