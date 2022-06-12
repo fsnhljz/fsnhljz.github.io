@@ -59,3 +59,8 @@ h2 {
   line-height: 24px;
   margin: 20px 0;
 }
+
+.localimg {
+  vertical-align: bottom;
+  margin-right: 10px;
+}
