@@ -10,13 +10,6 @@ body {
   overflow: hidden;
 }
 
-.mingming {
-  /*text-align: center;*/
-  margin: 120px auto auto auto;
-  max-width: 500px;
-  padding: 0 20px;
-}
-
 .main {
   text-align: center;
   margin: 120px auto auto auto;
@@ -29,10 +22,13 @@ body {
   text-decoration: underline;
 }
 
+.main a:hover {
+  color:#444444;
+}
+
 .main a:link,
 .main a:visited {
   color: #535353;
-  text-decoration: underline;
 }
 
 h1 {
