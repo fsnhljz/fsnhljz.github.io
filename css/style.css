@@ -9,6 +9,9 @@ body {
   background: #fff;
   overflow: hidden;
 }
+.dav {
+  display: block;
+}
 
 .main {
   text-align: center;
@@ -60,7 +63,7 @@ h2 {
   margin: 20px 0;
 }
 
-.localimg {
+.location img {
   vertical-align: bottom;
   margin-right: 10px;
 }
