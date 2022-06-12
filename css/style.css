@@ -26,13 +26,13 @@ body {
 
 .main a {
   color: #535353;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .main a:link,
 .main a:visited {
   color: #535353;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 h1 {
