@@ -17,20 +17,20 @@ body {
   padding: 0 20px;
 }
 
-.willerce {
+.main {
   text-align: center;
   margin: 120px auto auto auto;
   max-width: 500px;
   padding: 0 20px;
 }
 
-.willerce a {
+.main a {
   color: #535353;
   text-decoration: underline;
 }
 
-.willerce a:link,
-.willerce a:visited {
+.main a:link,
+.main a:visited {
   color: #535353;
   text-decoration: underline;
 }
