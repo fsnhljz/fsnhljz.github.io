@@ -32,6 +32,10 @@ body {
   text-decoration: none;
 }
 
+.nav {
+  margin-bottom: 5px;
+}
+
 h1 {
   font-size: 26px;
   color: #424242;
@@ -53,5 +57,5 @@ h2 {
 .location {
   height: 24px;
   line-height: 24px;
-  margin: 15px 0;
+  margin: 20px 0;
 }
