@@ -22,13 +22,14 @@ body {
   text-decoration: underline;
 }
 
-.main a:hover {
-  color:#444444;
-}
-
 .main a:link,
 .main a:visited {
   color: #535353;
+}
+
+.main a:hover {
+  color: #00FF00;
+  text-decoration: none;
 }
 
 h1 {
