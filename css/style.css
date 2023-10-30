@@ -68,6 +68,7 @@ h2 {
   margin-right: 10px;
 }
 blockquote {
+    ext-align: left;
     padding: 9px 18px;
     margin: 0 0 18px;
     font-size: 16.25px;
