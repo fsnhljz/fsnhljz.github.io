@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇵🇱 PL-Atman_Sp._z_o.o., server: 91.185.190.159, port: 19480, client-fingerprint: chrome, type: hysteria2, password: fc44fe6a-f083-4591-9c03-f8d61dc3907f, sni: www.bing.com, skip-cert-verify: true, alpn: [h3], udp: true}
+  - {name: 🇵🇱 PL-Atman_Sp._z_o.o., server: 91.185.190.159, port: 19480, client-fingerprint: chrome, type: hysteria2, password: aab95816-6708-401e-9514-1460e658c65e, sni: www.bing.com, skip-cert-verify: true, alpn: [h3], udp: true}
 proxy-groups:
     - { name: 飞鸟云, type: select, proxies: [🇵🇱 PL-Atman_Sp._z_o.o.] }
 rules:
