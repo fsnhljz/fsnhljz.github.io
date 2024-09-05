@@ -7,7 +7,19 @@ external-controller: :9090
 proxies:
   - {name: 🇵🇱 PL-Atman_Sp._z_o.o., server: 91.185.190.159, port: 19480, client-fingerprint: chrome, type: hysteria2, password: aab95816-6708-401e-9514-1460e658c65e, sni: www.bing.com, skip-cert-verify: true, alpn: [h3], udp: true}
 proxy-groups:
-    - { name: 飞鸟云, type: select, proxies: [🇵🇱 PL-Atman_Sp._z_o.o.] }
+  - name: 飞鸟云
+    type: select
+    proxies:
+      - 白嫖
+  - name: 白嫖
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇵🇱 PL-Atman_Sp._z_o.o.
+
 rules:
     - 'DOMAIN,4.feiniaoyun01.life,DIRECT'
     - 'DOMAIN-SUFFIX,services.googleapis.cn,飞鸟云'
