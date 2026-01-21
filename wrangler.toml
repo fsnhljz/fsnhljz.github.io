@@ -1,4 +1,4 @@
-name = "fsnhljz.github.io"
+name = "fsnhljz"
 main = "_worker.js"  # 或指定其他Worker文件
 compatibility_date = "2026-01-21"
 
