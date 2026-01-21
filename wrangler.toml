@@ -1,1 +1,7 @@
+name = "fsnhljz.github.io"
+main = "_worker.js"  # 或指定其他Worker文件
+compatibility_date = "2026-01-21"
 
+[site]
+bucket = "./"  # 静态文件目录
+entry-point = "workers-site"
